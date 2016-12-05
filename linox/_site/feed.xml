@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linox.BE</title>
+    <description>Fred's personal dump</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 05 Dec 2016 21:45:52 +0100</pubDate>
+    <lastBuildDate>Mon, 05 Dec 2016 21:45:52 +0100</lastBuildDate>
+    <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Bitcoin mining</title>
+        <description>&lt;h3 id=&quot;what-is-bitcoin-mining&quot;&gt;What is Bitcoin mining?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.bitcoinmining.com&quot;&gt;http://www.bitcoinmining.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Basically, Bitcoin mining is giving computing power to confirm transactions.&lt;/p&gt;
+
+&lt;h3 id=&quot;looking-for-bitcoin-mining-on-a-server&quot;&gt;Looking for Bitcoin mining on a server?&lt;/h3&gt;
+
+&lt;p&gt;I’m mining with CPU power, nog GPU or ASICS, using cpuminer: &lt;a href=&quot;http://sourceforge.net/projects/cpuminer/files/&quot;&gt;http://sourceforge.net/projects/cpuminer/files/&lt;/a&gt;. Download the latest version for Linux, 32 or 64 bits. Unpack it and you are ready to go on software level.&lt;/p&gt;
+
+&lt;p&gt;Best is to do Pooled Mining, to mine together with other people and get much faster a (Bitcoin) reward. I’m using &lt;a href=&quot;https://mining.bitcoin.cz&quot;&gt;https://mining.bitcoin.cz&lt;/a&gt;. Register an account at &lt;a href=&quot;https://mining.bitcoin.cz/accounts/register/&quot;&gt;https://mining.bitcoin.cz/accounts/register/&lt;/a&gt; and you can start.&lt;/p&gt;
+
+&lt;p&gt;In the command line, where you have the mining software, run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;fred@pepper:~/cpuminer$ &lt;/span&gt;./minerd --url http://api.bitcoin.cz:8332
+ --userpass CoolUsername.worker1:SomePassword --algo sha256d --threads&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:22] Binding thread 0 to cpu 0
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:22] 2 miner threads started, using &lt;span class=&quot;s1&quot;&gt;'sha256d'&lt;/span&gt; algorithm.
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:22] Binding thread 1 to cpu 1
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:22] Starting Stratum on stratum+tcp://stratum.bitcoin.cz:3333
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:22] JSON-RPC call failed: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;Unsupported method 'getblocktemplate'&quot;&lt;/span&gt;,
+   &lt;span class=&quot;s2&quot;&gt;&quot;code&quot;&lt;/span&gt;: -1
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:23] Stratum requested work restart
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:25] thread 0: 2097152 hashes, 1249 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:25] thread 1: 2097152 hashes, 1201 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:50] Stratum requested work restart
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:50] thread 1: 32976172 hashes, 1302 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:35:50] thread 0: 32869400 hashes, 1295 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:36:19] Stratum requested work restart
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:36:19] thread 1: 37260644 hashes, 1314 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:36:19] thread 0: 36532456 hashes, 1288 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:36:51] Stratum requested work restart
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:36:51] thread 1: 42340552 hashes, 1316 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:36:51] thread 0: 41552044 hashes, 1292 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:37:53] thread 0: 77505964 hashes, 1238 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:37:54] thread 1: 78976356 hashes, 1254 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:38:51] thread 0: 74282232 hashes, 1295 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:38:52] thread 1: 75240412 hashes, 1301 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:38:55] Stratum requested work restart
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:38:55] thread 0: 5323320 hashes, 1309 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:38:55] thread 1: 4108764 hashes, 1286 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:39:55] thread 1: 77130484 hashes, 1283 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:39:55] thread 0: 78565936 hashes, 1302 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2014-07-09 20:40:54] thread 1: 76985272 hashes, 1305 khash/s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Of course CoolUsername.worker1:SomePassword must fit your username and password. Threads must be the number of Cores you want to use for cpuminer. That’s it!&lt;/p&gt;
+
+&lt;p&gt;Best is to run cpuminer inside screen. That way it keeps running when you leave the server :]&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 22:02:07 +0100</pubDate>
+        <link>/2016/12/02/bitcoin-mining/</link>
+        <guid isPermaLink="true">/2016/12/02/bitcoin-mining/</guid>
+        
+        
+        <category>Linux</category>
+        
+        <category>Bitcoin</category>
+        
+      </item>
+    
+      <item>
+        <title>Mio Igo hack</title>
+        <description>&lt;p&gt;How I’ve put iGo 8 on my Mio:&lt;/p&gt;
+
+&lt;p&gt;Easy, download the SD Unlock from &lt;a href=&quot;http://www.freewebs.com/xtyler91/&quot;&gt;http://www.freewebs.com/xtyler91/&lt;/a&gt;. You put that on the SD card of your Mio and hard reboot your Mio. It will restart itself with the SD Unlock software. From there you can start anything you want, like iGo 8!&lt;/p&gt;
+
+&lt;p&gt;Big plus: remove the SD card and your GPS device has no trace at all from the hack!!!&lt;/p&gt;
+
+&lt;p&gt;Of course, iGo must be bought/downloaded somewhere else (PNA version of course, long live &lt;a href=&quot;http://www.gpsunderground.com&quot;&gt;http://www.gpsunderground.com&lt;/a&gt; :). You need to find updated maps after you downloaded a complete iGo package on &lt;a href=&quot;http://volny.cz/sstopar/mio_mapy_igo8_3.html&quot;&gt;http://volny.cz/sstopar/mio_mapy_igo8_3.html&lt;/a&gt; for example.&lt;/p&gt;
+
+&lt;p&gt;My Mio is a C510E. Mio s*cks with their old maps when you have a Miomap device …&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 21:57:43 +0100</pubDate>
+        <link>/2016/12/02/mio-igo-hack/</link>
+        <guid isPermaLink="true">/2016/12/02/mio-igo-hack/</guid>
+        
+        
+        <category>GPS</category>
+        
+        <category>Hack</category>
+        
+      </item>
+    
+      <item>
+        <title>Software Raid On Mac Mini</title>
+        <description>&lt;p&gt;I have an older Mac Mini, with a PowerPC (PPC) CPU. On that Mac Mini I installed Debian PPC. Not difficult. But because I think the internal disk is dying, and because I have an older spare USB disk, I want to combine both to something more reliable for my data. Using software raid, buitl in into the Linux kernel.&lt;/p&gt;
+
+&lt;p&gt;Here is my command history.&lt;/p&gt;
+
+&lt;p&gt;Check what’s on the internal disk and create the partition we will use for the software raid:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;fdisk /dev/hda
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: p
+/dev/hda
+        &lt;span class=&quot;c&quot;&gt;#                    type name                  length   base      ( size )  system&lt;/span&gt;
+/dev/hda1     Apple_partition_map Apple                     63 @ 1         &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 31.5k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Partition map
+/dev/hda2         Apple_Bootstrap untitled                3907 @ 64        &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;  1.9M&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  NewWorld bootblock
+/dev/hda3         Apple_UNIX_SVR2 untitled            58593751 @ 3971      &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 27.9G&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Linux native
+/dev/hda4              Apple_Free Extra               97703766 @ 58597722  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 46.6G&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Free space
+
+Block &lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;512, Number of &lt;span class=&quot;nv&quot;&gt;Blocks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;156301488
+&lt;span class=&quot;nv&quot;&gt;DeviceType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0, &lt;span class=&quot;nv&quot;&gt;DeviceId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0
+
+
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: c
+First block: 58597722
+Length &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;blocks, kB &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, MB &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;M&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; or GB &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;G&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;: 97703766
+Name of partition: raid
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: p
+/dev/hda
+        &lt;span class=&quot;c&quot;&gt;#                    type name                  length   base      ( size )  system&lt;/span&gt;
+/dev/hda1     Apple_partition_map Apple                     63 @ 1         &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 31.5k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Partition map
+/dev/hda2         Apple_Bootstrap untitled                3907 @ 64        &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;  1.9M&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  NewWorld bootblock
+/dev/hda3         Apple_UNIX_SVR2 untitled            58593751 @ 3971      &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 27.9G&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Linux native
+/dev/hda4         Apple_UNIX_SVR2 raid                97703766 @ 58597722  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 46.
+
+Block &lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;512, Number of &lt;span class=&quot;nv&quot;&gt;Blocks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;156301488
+&lt;span class=&quot;nv&quot;&gt;DeviceType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0, &lt;span class=&quot;nv&quot;&gt;DeviceId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0
+
+
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: w
+IMPORTANT: You are about to write a changed partition map to disk.
+For any partition you changed the start or size of, writing out
+the map causes all data on that partition to be LOST FOREVER.
+Make sure you have a backup of any data on such partitions you
+want to keep before answering &lt;span class=&quot;s1&quot;&gt;'yes'&lt;/span&gt; to the question below!
+
+Write partition map? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;n/y]: y
+The partition map has been saved successfully!
+
+Syncing disks.
+
+Partition map written to disk. If any partitions on this disk
+were still &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;use by the system &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;see messages above&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, you will need
+to reboot &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;order to utilize the new partition map.
+
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: q
+Load the software raid modules into the kernel
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;modprobe md
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;modprobe raid1
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;ll /dev/md&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+total 0
+Create the partition &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;raid on the external USB disk:
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;fdisk /dev/sda
+/dev/sda
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: p
+No partition map exists
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: ?
+Notes:
+  Base and length fields are blocks, which are 512 bytes long.
+  The name of a partition is descriptive text.
+
+Commands are:
+  h    &lt;span class=&quot;nb&quot;&gt;help
+  &lt;/span&gt;p    print the partition table
+  P    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;print ordered by base address&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  i    initialize partition map
+  s    change size of partition map
+  b    create new 800K bootstrap partition
+  c    create new Linux partition
+  C    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;create with &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;also specified&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  d    delete a partition
+  r    reorder partition entry &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;map
+  w    write the partition table
+  q    quit editing &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;don&lt;span class=&quot;s1&quot;&gt;'t save changes)
+Command (? for help): i
+size of '&lt;/span&gt;device&lt;span class=&quot;s1&quot;&gt;' is 320173056 blocks:
+new size of '&lt;/span&gt;device&lt;span class=&quot;s1&quot;&gt;' is 320173056 blocks
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2              Apple_Free Extra              320172992 @ 64        (152.7G)  Free space
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): c
+First block: 64
+Length (in blocks, kB (k), MB (M) or GB (G)): 97703766
+Name of partition: raid
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        ( 46.6G)  Linux native
+/dev/sda3              Apple_Free Extra              222469226 @ 97703830  (106.1G)  Free space
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): c
+First block: 97703830
+Length (in blocks, kB (k), MB (M) or GB (G)): 222469226
+Name of partition: p
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        ( 46.6G)  Linux native
+/dev/sda3         Apple_UNIX_SVR2 p                  222469226 @ 97703830  (106.1G)  Linux native
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        ( 46.6G)  Linux native
+/dev/sda3         Apple_UNIX_SVR2 p                  222469226 @ 97703830  (106.1G)  Linux native
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): ?
+Notes:
+  Base and length fields are blocks, which are 512 bytes long.
+  The name of a partition is descriptive text.
+
+Commands are:
+  h    help
+  p    print the partition table
+  P    (print ordered by base address)
+  i    initialize partition map
+  s    change size of partition map
+  b    create new 800K bootstrap partition
+  c    create new Linux partition
+  C    (create with type also specified)
+  d    delete a partition
+  r    reorder partition entry in map
+  w    write the partition table
+  q    quit editing (don'&lt;/span&gt;t save changes&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: w
+IMPORTANT: You are about to write a changed partition map to disk.
+For any partition you changed the start or size of, writing out
+the map causes all data on that partition to be LOST FOREVER.
+Make sure you have a backup of any data on such partitions you
+want to keep before answering &lt;span class=&quot;s1&quot;&gt;'yes'&lt;/span&gt; to the question below!
+
+Write partition map? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;n/y]: y
+The partition map has been saved successfully!
+
+Syncing disks.
+
+Partition map written to disk. If any partitions on this disk
+were still &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;use by the system &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;see messages above&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, you will need
+to reboot &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;order to utilize the new partition map.
+
+Command &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;? &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: q
+Check the partitions on the disks and create the software raid device:
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;fdisk -l /dev/sda
+/dev/sda
+        &lt;span class=&quot;c&quot;&gt;#                    type name                  length   base      ( size )  system&lt;/span&gt;
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 31.5k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 46.6G&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Linux native
+/dev/sda3         Apple_UNIX_SVR2 p                  222469226 @ 97703830  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;106.1G&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Linux native
+
+Block &lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;512, Number of &lt;span class=&quot;nv&quot;&gt;Blocks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;320173056
+&lt;span class=&quot;nv&quot;&gt;DeviceType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0, &lt;span class=&quot;nv&quot;&gt;DeviceId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0
+
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;fdisk -l /dev/hda
+/dev/hda
+        &lt;span class=&quot;c&quot;&gt;#                    type name                  length   base      ( size )  system&lt;/span&gt;
+/dev/hda1     Apple_partition_map Apple                     63 @ 1         &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 31.5k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Partition map
+/dev/hda2         Apple_Bootstrap untitled                3907 @ 64        &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;  1.9M&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  NewWorld bootblock
+/dev/hda3         Apple_UNIX_SVR2 untitled            58593751 @ 3971      &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 27.9G&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Linux native
+/dev/hda4         Apple_UNIX_SVR2 raid                97703766 @ 58597722  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; 46.6G&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  Linux native
+
+Block &lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;512, Number of &lt;span class=&quot;nv&quot;&gt;Blocks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;156301488
+&lt;span class=&quot;nv&quot;&gt;DeviceType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0, &lt;span class=&quot;nv&quot;&gt;DeviceId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x0
+
+&lt;span class=&quot;gp&quot;&gt;mini:~#  &lt;/span&gt;mdadm --create /dev/md0 -l1 -n2 /dev/hda4 /dev/sda2
+mdadm: array /dev/md0 started.
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;ll /dev/md&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+brw-rw---- 1 root disk 9, 0 2010-02-19 21:16 /dev/md0
+
+/dev/md:
+total 0
+
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;dmesg |tail -30
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   19.432691] eth0: Link is up at 100 Mbps, full-duplex.
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   19.438743] eth0: Pause is disabled
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   22.311163] NET: Registered protocol family 10
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   22.312745] lo: Disabled Privacy Extensions
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   22.844675] RPC: Registered udp transport module.
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   22.845625] RPC: Registered tcp transport module.
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   22.922990] Installing knfsd &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 1996 okir@monad.swb.de&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   23.023021] NFSD: Using /var/lib/nfs/v4recovery as the NFSv4 state recovery directory
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   23.037864] NFSD: starting 90-second grace period
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   27.476122] NET: Registered protocol family 5
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   33.160475] eth0: no IPv6 routers present
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;90914.899398] md: raid1 personality registered &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;level 1
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91322.284112] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] 320173056 512-byte hardware sectors &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;163929 MB&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91322.285965] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] Write Protect is off
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91322.286829] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] Mode Sense: 27 00 00 00
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91322.286833] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] Assuming drive cache: write through
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91322.287719]  sda: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;mac] sda1 sda2 sda3
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91324.309578] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] 320173056 512-byte hardware sectors &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;163929 MB&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91324.311429] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] Write Protect is off
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91324.312287] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] Mode Sense: 27 00 00 00
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91324.312292] sd 1:0:0:0: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sda] Assuming drive cache: write through
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91324.313155]  sda: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;mac] sda1 sda2 sda3
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91430.835341] md: &lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt;&amp;lt;hda4&amp;gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91430.852070] md: &lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt;&amp;lt;sda2&amp;gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91430.852910] md: md0: raid array is not clean -- starting background reconstruction
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91431.010544] raid1: raid &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;md0 active with 2 out of 2 mirrors
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91431.033542] md: resync of RAID array md0
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91431.034418] md: minimum _guaranteed_  speed: 1000 KB/sec/disk.
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91431.035331] md: using maximum available idle IO bandwidth &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;but not more than 200000 KB/sec&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;resync.
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;91431.036353] md: using 128k window, over a total of 48851776 blocks.
+See here the creation of your partition:
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;cat /proc/mdstat
+Personalities : &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;raid1]
+md0 : active raid1 sda2[1] hda4[0]
+      48851776 blocks &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2/2] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;UU]
+      &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;gt;....................]  resync &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  2.2% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1112640/48851776&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;finish&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;38.3min &lt;span class=&quot;nv&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;20727K/sec
+
+unused devices: &amp;lt;none&amp;gt;
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;cat /proc/mdstat
+Personalities : &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;raid1]
+md0 : active raid1 sda2[1] hda4[0]
+      48851776 blocks &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2/2] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;UU]
+      &lt;span class=&quot;o&quot;&gt;[===&lt;/span&gt;&amp;gt;.................]  resync &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 15.8% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;7722368/48851776&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;finish&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;33.1min &lt;span class=&quot;nv&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;20682K/sec
+
+unused devices: &amp;lt;none&amp;gt;
+Create a filesystem &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ext3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; on your software raid partition and mount it:
+&lt;span class=&quot;gp&quot;&gt;mini:~#  &lt;/span&gt;mkfs.ext3 /dev/md0
+mke2fs 1.41.3 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;12-Oct-2008&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Filesystem &lt;span class=&quot;nv&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+OS &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;: Linux
+Block &lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4096 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Fragment &lt;span class=&quot;nv&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4096 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+3055616 inodes, 12212944 blocks
+610647 blocks &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;5.00%&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; reserved &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;the super user
+First data &lt;span class=&quot;nv&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+Maximum filesystem &lt;span class=&quot;nv&quot;&gt;blocks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+373 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424
+
+Writing inode tables: &lt;span class=&quot;k&quot;&gt;done
+&lt;/span&gt;Creating journal &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;32768 blocks&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &lt;span class=&quot;k&quot;&gt;done
+&lt;/span&gt;Writing superblocks and filesystem accounting information: &lt;span class=&quot;k&quot;&gt;done
+
+&lt;/span&gt;This filesystem will be automatically checked every 26 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;mkdir /data
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;mount /dev/md0 /data/
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;vi /etc/fstab
+
+&lt;span class=&quot;gp&quot;&gt;mini:~# &lt;/span&gt;cat /proc/mdstat
+Personalities : &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;raid1]
+md0 : active raid1 sda2[1] hda4[0]
+      48851776 blocks &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2/2] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;UU]
+      &lt;span class=&quot;o&quot;&gt;[=====&lt;/span&gt;&amp;gt;...............]  resync &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 26.9% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;13163840/48851776&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;finish&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;31.7min &lt;span class=&quot;nv&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;18709K/sec
+
+unused devices: &amp;lt;none&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 02 Dec 2016 21:52:50 +0100</pubDate>
+        <link>/2016/12/02/software-raid-on-mac-mini/</link>
+        <guid isPermaLink="true">/2016/12/02/software-raid-on-mac-mini/</guid>
+        
+        
+        <category>Linux</category>
+        
+        <category>Debian</category>
+        
+        <category>Mac</category>
+        
+      </item>
+    
+      <item>
+        <title>Disaster recovery (DR) with Mondo for Debian Linux server</title>
+        <description>&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+&lt;p&gt;If you want a disaster recovery for a Linux server (Debian here), you can find some very nasty tools on the web. The one I’m using for ages already, is Mondo (and Mindi).&lt;/p&gt;
+
+&lt;p&gt;For a Debian 5 Lenny server, go to &lt;a href=&quot;ftp://ftp.mondorescue.org/debian/&quot;&gt;ftp://ftp.mondorescue.org/debian/&lt;/a&gt; and download the packages mindi, mindi-busybox and mondo. Of course they have some dependencies you’ll lto install together with your downloaded packages.&lt;/p&gt;
+
+&lt;p&gt;Once they are installed you can choose between 2 backup types:&lt;/p&gt;
+
+&lt;h3 id=&quot;usb-disk&quot;&gt;USB disk&lt;/h3&gt;
+
+&lt;p&gt;By creating a boot-able USB disk, here with a 750GB USK disk:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mondoarchive -O -E &lt;span class=&quot;s2&quot;&gt;&quot;/mondo&quot;&lt;/span&gt; -U -d /dev/sdc -s 745g -T &lt;span class=&quot;s2&quot;&gt;&quot;/mondo/tmp/&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Boot from that USB disk and you’ll have your server again.&lt;/p&gt;
+
+&lt;h3 id=&quot;cddvd&quot;&gt;CD/DVD&lt;/h3&gt;
+
+&lt;p&gt;By creating boot-able ISO files, here 4GB DVD ISO files:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mondoarchive -iO -E &lt;span class=&quot;s2&quot;&gt;&quot;/mondo&quot;&lt;/span&gt; -s 4g -S &lt;span class=&quot;s2&quot;&gt;&quot;/mondo/iso/&quot;&lt;/span&gt; -T &lt;span class=&quot;s2&quot;&gt;&quot;/mondo/tmp/&quot;&lt;/span&gt; -d &lt;span class=&quot;s2&quot;&gt;&quot;/mondo/&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Of course, folders /mondo, /mondo/iso and /mondo/tmp have to exist already.&lt;/p&gt;
+
+&lt;p&gt;In case you chose for the ISO option, you will find your boot-able ISO files inside /mondo.&lt;/p&gt;
+
+&lt;p&gt;Burn them on DVD:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cdrecord -v --dev&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3,0,0 mondorescue-1.iso &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;run cdrecord -scanbus to identify your burner&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Boot from that DVD in case of a Disaster Recovery, and there you have your server again, just like it was when you took the mondoarchive!&lt;/p&gt;
+
+&lt;h3 id=&quot;the-end&quot;&gt;The end&lt;/h3&gt;
+
+&lt;p&gt;Most important for Disaster Recovery, test it before you need it!!!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 21:34:17 +0100</pubDate>
+        <link>/2016/12/02/disaster-recovery-with-mondo-for-debian-linux-server/</link>
+        <guid isPermaLink="true">/2016/12/02/disaster-recovery-with-mondo-for-debian-linux-server/</guid>
+        
+        
+        <category>Debian</category>
+        
+        <category>Linux</category>
+        
+      </item>
+    
+      <item>
+        <title>Gluster on Debian Linux</title>
+        <description>&lt;p&gt;Install Gluster package on Debian&lt;/p&gt;
+
+&lt;p&gt;Download Gluster Debian package from &lt;a href=&quot;http://download.gluster.com/pub/gluster/glusterfs/LATEST/Debian/&quot;&gt;http://download.gluster.com/pub/gluster/glusterfs/LATEST/Debian/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To mount a Gluster Volume (“partition”), you need FUSE:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;apt-get install fuse-utils&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Setup Gluster daemon in /etc/glusterfs&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;server4:/etc/glusterfs# &lt;/span&gt;cat glusterd.vol
+volume management
+   &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;mgmt/glusterd
+   option working-directory /etc/glusterd
+   option transport-type socket
+   option transport.socket.keepalive-time 10
+   option transport.socket.keepalive-interval 2
+end-volume
+
+&lt;span class=&quot;gp&quot;&gt;server4:/etc/glusterfs# &lt;/span&gt;cat glusterfsd.vol
+volume posix
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;storage/posix
+  option directory /data/glusterfs/export
+end-volume
+
+volume locks
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;features/locks
+  subvolumes posix
+end-volume
+
+volume brick
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;performance/io-threads
+  option thread-count 8
+  subvolumes locks
+end-volume
+
+volume server
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;protocol/server
+  option transport-type tcp/server
+&lt;span class=&quot;c&quot;&gt;#  option auth.addr.brick.allow 192.168.0.104&lt;/span&gt;
+  subvolumes brick
+end-volume
+
+&lt;span class=&quot;gp&quot;&gt;server4:/etc/glusterfs# &lt;/span&gt;cat glusterfs.vol
+volume server1
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;protocol/client
+  option transport-type tcp/client
+  option remote-host server1
+  option remote-subvolume brick
+end-volume
+
+volume server2
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;protocol/client
+  option transport-type tcp/client
+  option remote-host server2
+  option remote-subvolume brick
+end-volume
+
+volume server3
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;protocol/client
+  option transport-type tcp/client
+  option remote-host server3
+  option remote-subvolume brick
+end-volume
+
+volume server4
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;protocol/client
+  option transport-type tcp/client
+  option remote-host server4
+  option remote-subvolume brick
+end-volume
+
+volume distribute
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;cluster/distribute
+  option min-free-disk 5%
+  subvolumes server1 server2 server3 server4
+end-volume
+
+volume writebehind
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;performance/write-behind
+  option cache-size 3MB
+  option flush-behind on
+  subvolumes distribute
+end-volume
+
+volume cache
+  &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;performance/io-cache
+  option cache-size 512MB
+&lt;span class=&quot;c&quot;&gt;# option priority *.h:3,*.html:2,*:1&lt;/span&gt;
+  subvolumes writebehind
+end-volume
+
+&lt;span class=&quot;gp&quot;&gt;server4:/etc/glusterfs# &lt;/span&gt;/etc/init.d/glusterd restart&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Create Volume on your servers (run from server4 here)&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;server4:/etc/glusterfs# &lt;/span&gt;gluster
+&lt;span class=&quot;gp&quot;&gt;gluster&amp;gt; &lt;/span&gt;peer probe server1
+&lt;span class=&quot;gp&quot;&gt;gluster&amp;gt; &lt;/span&gt;peer probe server2
+&lt;span class=&quot;gp&quot;&gt;gluster&amp;gt; &lt;/span&gt;peer probe server3
+&lt;span class=&quot;gp&quot;&gt;gluster&amp;gt; &lt;/span&gt;peer status
+Number of Peers: 3
+
+Hostname: server3
+Uuid: 42d4b4e7-bf18-49ec-b693-eaed111b3ba1
+State: Peer &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Cluster &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Connected&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+Hostname: server2
+Uuid: 37058b64-8439-403d-ab25-b4860a74c781
+State: Peer &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Cluster &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Connected&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+Hostname: server1
+Uuid: d4d3662c-e9f1-4e38-861d-92671d26d81a
+State: Peer &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;Cluster &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Connected&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;gluster&amp;gt; &lt;/span&gt;volumee create voltest server1:/voltest  server2:/voltest  server3:/voltest  server4:/voltest
+Creation of volume voltest has been successful. Please start the volume to access data.
+&lt;span class=&quot;gp&quot;&gt;gluster&amp;gt; &lt;/span&gt;volume start voltest
+Starting volume voltest has been successful&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Mount Volume and access it&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;server4:/var/log/glusterfs# &lt;/span&gt;mount -t glusterfs server4:/voltest /mnt/glusterfs
+&lt;span class=&quot;gp&quot;&gt;server4:/var/log/glusterfs# &lt;/span&gt;df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda1              30G  1.7G   27G   7% /
+tmpfs                 2.0G     0  2.0G   0% /lib/init/rw
+udev                   10M  564K  9.5M   6% /dev
+tmpfs                 2.0G     0  2.0G   0% /dev/shm
+/dev/sdb1             202G  153M  192G   1% /data
+server4:/voltest
+                      118G  6.8G  105G   7% /mnt/glusterfs
+&lt;span class=&quot;gp&quot;&gt;server4:/var/log/glusterfs# &lt;/span&gt;mount
+/dev/sda1 on / &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;ext3 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,errors&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;remount-ro&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+tmpfs on /lib/init/rw &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;tmpfs &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,nosuid,mode&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0755&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+proc on /proc &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;proc &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,noexec,nosuid,nodev&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+sysfs on /sys &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;sysfs &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,noexec,nosuid,nodev&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+procbususb on /proc/bus/usb &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;usbfs &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+udev on /dev &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;tmpfs &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,mode&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0755&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+tmpfs on /dev/shm &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;tmpfs &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,nosuid,nodev&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+devpts on /dev/pts &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;devpts &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,noexec,nosuid,gid&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;5,mode&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;620&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+/dev/sdb1 on /data &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;ext2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+fusectl on /sys/fs/fuse/connections &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;fusectl &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+server4:/voltest on /mnt/glusterfs &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;fuse.glusterfs &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rw,allow_other,default_permissions,max_read&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;131072&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 02 Dec 2016 21:29:22 +0100</pubDate>
+        <link>/2016/12/02/gluster-on-debian/</link>
+        <guid isPermaLink="true">/2016/12/02/gluster-on-debian/</guid>
+        
+        
+        <category>Debian</category>
+        
+        <category>Linux</category>
+        
+        <category>Gluster</category>
+        
+      </item>
+    
+      <item>
+        <title>Backup DVD movie (Debian)</title>
+        <description>&lt;p&gt;Take a copy of the DVD movie to your local disk:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vobcopy -m&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Create an ISO file, ready to serve as backup of your DVD movie disk:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkisofs -dvd-video -udf -o movie_backup.iso /movie_backup_directory/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 02 Dec 2016 21:27:33 +0100</pubDate>
+        <link>/2016/12/02/backup-dvd-movie-debian/</link>
+        <guid isPermaLink="true">/2016/12/02/backup-dvd-movie-debian/</guid>
+        
+        
+        <category>Linux</category>
+        
+        <category>Debian</category>
+        
+        <category>DVD</category>
+        
+        <category>Hack</category>
+        
+      </item>
+    
+      <item>
+        <title>Mount Iscsi Devices (RedHat)</title>
+        <description>&lt;p&gt;Install iSCSI initiator utilities:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;yum install iscsi-initiator-utils&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Find iSCSI targets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;iscsiadm --mode discovery --type sendtargets --portal 10.0.0.10&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You maybe need to restart iSCSI and change iSCSI settings:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/etc/init.d/iscsi stop
+/etc/init.d/iscsi start
+vi /etc/iscsi/initiatorname.iscsi
+vi /etc/iscsi/iscsid.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can label the partitions on the iSCSI, easier for automatic mounts after reboots:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;e2label /dev/sdc1 /data1
+e2label /dev/sdd1 /data2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Mount the iSCSI disk:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mount &lt;span class=&quot;nv&quot;&gt;LABEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/data1 /data1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 02 Dec 2016 21:22:19 +0100</pubDate>
+        <link>/2016/12/02/mount-iscsi-devices-redhat/</link>
+        <guid isPermaLink="true">/2016/12/02/mount-iscsi-devices-redhat/</guid>
+        
+        
+        <category>Linux</category>
+        
+        <category>RedHat</category>
+        
+        <category>iSCSI</category>
+        
+      </item>
+    
+      <item>
+        <title>Copy hard disk over Ethernet (Linux)</title>
+        <description>&lt;p&gt;Sometimes you need to move a server from one server to another. And the only thing you can do, is copy the content of the disks. What I sometimes do, is stream the disk content with netcat.&lt;/p&gt;
+
+&lt;p&gt;ServerA sends the content of the disks to ServerB. Over Ethernet. With the tool netcat. Which is very fast, because it’s using UDP.&lt;/p&gt;
+
+&lt;p&gt;I advice you to boot from a bootable Linux CD for streaming like that your hard disk (example: &lt;a href=&quot;http://www.knoppix.org&quot;&gt;Knoppix&lt;/a&gt;)&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ServerA:netcat ---&amp;gt; ServerB:netcat&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To start that “migration”, run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;root@ServerB# &lt;/span&gt;nc -p 2222 -l | dd &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/sda&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;root@ServerA# &lt;/span&gt;dd &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/hda | nc 10.32.107.140 2222&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;After that ServerB got all the data, both servers will stop their running script.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 21:06:40 +0100</pubDate>
+        <link>/2016/12/02/copy-hard-disk-over-ethernet-linux/</link>
+        <guid isPermaLink="true">/2016/12/02/copy-hard-disk-over-ethernet-linux/</guid>
+        
+        
+        <category>Linux</category>
+        
+      </item>
+    
+      <item>
+        <title>Root your Android</title>
+        <description>&lt;h4 id=&quot;method-1&quot;&gt;METHOD 1&lt;/h4&gt;
+
+&lt;p&gt;Root your Android with a very simple tool:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.unrevoked.com/&quot;&gt;http://www.unrevoked.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It reboots your Android phone a few times and does his stuff. Some people need to run it several times before it’s completely fixed.
+After that, run ClockworkMod Recovery or something similar to put your favourite Android on it like Cyanogen or Oxygen.&lt;/p&gt;
+
+&lt;h4 id=&quot;method-2&quot;&gt;METHOD 2&lt;/h4&gt;
+
+&lt;p&gt;Download &lt;a href=&quot;http://revolutionary.io/&quot;&gt;http://revolutionary.io/&lt;/a&gt;. Put Cyanogen zip file on sd card, run revolutionary tool to boot revolutionary hboot, choose in revolutionary menu to install zip from sd card (Cyanogen), and reboot your system!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 20:53:49 +0100</pubDate>
+        <link>/2016/12/02/root-your-android/</link>
+        <guid isPermaLink="true">/2016/12/02/root-your-android/</guid>
+        
+        
+        <category>Android</category>
+        
+        <category>Hack</category>
+        
+      </item>
+    
+      <item>
+        <title>Akamai (small) knowledge base</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Vary header without Cachecontrol header: Akamai wil not cache your data!&lt;/li&gt;
+  &lt;li&gt;Get the Akamai “debug” headers:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl -m 10 -D - -o /dev/null -s --compressed -H &lt;span class=&quot;s2&quot;&gt;&quot;Pragma: akamai-x-get-cache-key&quot;&lt;/span&gt; -H &lt;span class=&quot;s2&quot;&gt;&quot;Pragma: akamai-x-cache-on&quot;&lt;/span&gt; -H &lt;span class=&quot;s2&quot;&gt;&quot;Pragma: akamai-x-cache-remote-on&quot;&lt;/span&gt; -H &lt;span class=&quot;s2&quot;&gt;&quot;Pragma: akamai-x-get-true-cache-key&quot;&lt;/span&gt; http://i3.microsoft.com/library/svy/broker.js&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 02 Dec 2016 20:40:17 +0100</pubDate>
+        <link>/2016/12/02/akamai-knowledge-base/</link>
+        <guid isPermaLink="true">/2016/12/02/akamai-knowledge-base/</guid>
+        
+        
+        <category>Akamai</category>
+        
+      </item>
+    
+  </channel>
+</rss>
