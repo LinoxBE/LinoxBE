@@ -13,7 +13,7 @@
   },
   "about_me":{
     "about_me": "About Me",
-    "des": "I am a Full Stack engineer with website development, automation Ops and writing scripts experience. Life is a continuous learning process, so work makes me more rigorous, travel makes my life more colorful. I can make lots of friends when I coding and travel."
+    "des": "I’m Not a Genius, Just a Tremendous Bundle of Experience (R. Buckminster Fuller). Full stak DevOps Manager. Bitcoin is my religion."
   },
   "skills":{
     "my_skills": "My Skills"
@@ -39,9 +39,9 @@
     "ucloud_des": "In ucloud, I started to deal with servers and Linux system and use shell scripts to manage massive server.",
     "ucloud_date": "Sep. 2013",
     "ucloud_job": "Dev Ops",
-    "college": "Graduation",
-    "college_des": "At July 2013,I graduated from college and started my IT technology tour.",
-    "college_date": "Jul. 2013",
+    "college": "Master",
+    "college_des": "In June 2000, I master graduated in Engineering, IT",
+    "college_date": "Jun. 2000",
     "college_job": "Student"
   },
   "blog":{

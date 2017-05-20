@@ -2,33 +2,19 @@
     <div class="row m-b-lg">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
-            <h1><span data-i18n="projects.my_projects">My Projects</span></h1>
+            <h1><span data-i18n="projects.bitcoin">Bitcoin</span></h1>
         </div>
     </div>
     <div class="row">
-        {% for project in site.data.projects %}
-            {% assign loopindex = forloop.index | modulo: 2 %}
-            {% if forloop.last %}
-                {% if forloop.last == forloop.first %}
-            <div class="col-sm-6 wow col-sm-offset-3 zoomIn">
-                {% else %}
-            <div class="col-sm-6 wow {% if loopindex == 1 %} fadeInLeft col-sm-offset-3 {% else %} fadeInRight {% endif %}">
-                {% endif %}
-            {% else %}
-            <div class="col-sm-6 wow {% if loopindex == 1 %} fadeInLeft {% else %} fadeInRight {% endif %}">
-            {% endif %}
-              <div class="team-member">
-                  <img src="{{ project.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
-                  <h4><span class="navy">{{ project.name }}</span></h4>
-                  <p><span data-i18n="projects.{{ project.i18n }}">{{ project.desc }}</span></p>
-                  {% if project.repo %}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ site.author.github_username }}&repo={{ project.repo }}&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="100px" height="22px"></iframe>
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ site.author.github_username }}&repo={{ project.repo }}&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="22px"></iframe>
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ site.author.github_username }}&repo={{ project.repo }}&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="22px"></iframe>
-                  {% endif %}
-              </div>
-          </div>
-      {% endfor %}
+	<div class="col-xs-12 wow zoomI">
+	        <div id="coindesk-widget" data-size="mpu" data-align="center"></div>
+		<script type="text/javascript" src="//widget.coindesk.com/bpiticker/coindesk-widget.min.js"></script>
+   	</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+            <p id="jalpc_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</strong></p>
+        </div>
     </div>
 </div>
 <br>

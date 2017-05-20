@@ -5,7 +5,7 @@ title: "Blockchain.Brussels"
 description: "The local contact in Brussels for Bitcoin and Blockchain"
 keywords: "Brussels, Bitcoin, Blockchain"
 baseurl: "/"
-url: "http://www.blockchain.brussels"
+url: "https://blockchain.brussels"
 # url: "http://127.0.0.1:4000"
 
 # author
@@ -20,9 +20,6 @@ author:
   desc: '“I’m Not a Genius, Just a Tremendous Bundle of Experience" (R. Buckminster Fuller)'
 
 # comment
-changyan:
-  # appid: cysfY7ULn
-  # conf: prod_861928934cecb7a18e15bedaed9dae29
 disqus:
   name: linoxbe
   public_key: tj2Mffffffffff

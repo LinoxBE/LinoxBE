@@ -1,54 +1,68 @@
 # careers section data
 - name:
-    detail: Nextcode
-    i18n: nextcode
+    detil: Blockchain
+    i18n: blockchain
   desc:
-    detail: Now I am in Nextcode and develop website with Python code for genetic analysis.
-    i18n: nextcode_des
+    detail: I discovered Bitcoin in 2013, to discover later other crypto currencies, using private blockchains like MultiChain, testing services like StorJ for decentralised storage, and finally setup Smart Contracts with Ethereum.
+    i18n: blockchain_des
   date:
-    detail: Apr. 2016
-    i18n: nextcode_date
+    detail: Nov. 2013
+    i18n: blockchain_date
   job:
-    detail: Python Developer
-    i18n: nextcode_job
-  icon: fa-plus-square
+    detail: Blockchain
+    i18n: blockchain_job
+  icon: fa-btc
 
 - name:
-    detail: Netease Game
-    i18n: netease
+    detail: StepStone
+    i18n: stepstone
   desc:
-    detail: In Netease game, I learned game service system and use Python code for ops.
-    i18n: netease_des
+    detail: Now I am at StepStone, where after 2 years of system engineering, I promoted to manager. I'm responsible to run massive Internet platforms :)
+    i18n: stepstone_des
   date:
-    detail: Jun. 2015
-    i18n: nextcode_date
+    detail: Jul. 2006
+    i18n: stepstone_date
   job:
-    detail: Dev Ops
-    i18n: netease_job
-  icon: fa-gamepad
+    detail: Date center Manager
+    i18n: stepstone_job
+  icon: fa-database
 
 - name:
-    detail: Ucloud
-    i18n: ucloud
+    detail: Precision Operations
+    i18n: precision
   desc:
-    detail: In ucloud, I started to deal with servers and Linux system and use shell scripts to manage massive server.
-    i18n: ucloud_des
+    detail: At Preision Operations, I started using my Linux experience (started in '96) to build servers, services, firewalls, applications, etc. 
+    i18n: precision_des
   date:
-    detail: Sep. 2013
-    i18n: ucloud_date
+    detail: Jun. 2002
+    i18n: precision_date
   job:
-    detail: Dev Ops
-    i18n: ucloud_job
-  icon: fa-cloud
+    detail: DevOps
+    i18n: precision_job
+  icon: fa-linux
 
 - name:
-    detail: Graduation
-    i18n: college
+    detail: Alcatel
+    i18n: alcatel
   desc:
-    detail: At July 2013,I graduated from college and started my IT technology tour.
+    detail: At Alcatel, I was programming a GUI on Unix for handling telecom equipment.
+    i18n: alcatel_des
+  date:
+    detail: Jul. 2000
+    i18n: alcatel_date
+  job:
+    detail: Software Engineer
+    i18n: alcatel_job
+  icon: fa-mobile
+
+- name:
+    detail: Master
+    i18n: academy
+  desc:
+    detail: In June 2000, I master graduated in Engineering, IT.
     i18n: college_des
   date:
-    detail: Jul. 2013
+    detail: Jun. 2000
     i18n: college_date
   job:
     detail: Student

@@ -1,21 +1,17 @@
-# skills section data
-- name: Python
-  percentage: 85
+#ghtbulb-o skills section data
+- name: Secure
+  des: Secure and setup protection for your bitcoins
+  icon: fa-lock
 
-- name: HTML/CSS
-  percentage: 65
+- name: Expertise
+  des: Bitcoin and Blockchain expertise
+  icon: fa-flask
 
-- name: Linux/Shell
-  percentage: 75
+- name: Knowledge
+  des: Why Bitcoin? Where Bitcoin? How Bitcoin? I'm a HODLER!
+  icon: fa-lightbulb-o
 
-- name: jQuery
-  percentage: 85
+- name: Contact
+  des: Your local contact in Brussels, Belgium, Europe, ... to the moon ;)
+  icon: fa-user-secret
 
-- name: AngularJS
-  percentage: 80
-
-- name: Ionic
-  percentage: 70
-
-- name: Vuejs
-  percentage: 65
