@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blockchain.Brussels</title>
-    <description>The local contact in Brussels for Bitcoin and Blockchain</description>
-    <link>http://localhost:4000//</link>
-    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 May 2017 21:56:57 +0200</pubDate>
-    <lastBuildDate>Sat, 20 May 2017 21:56:57 +0200</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
+    <description>Your contact for Bitcoin, Ethereum, Blockchain and ICO. Based in Belgium.</description>
+    <link>https://blockchain.brussels//</link>
+    <atom:link href="https://blockchain.brussels//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 24 Oct 2017 20:17:42 +0200</pubDate>
+    <lastBuildDate>Tue, 24 Oct 2017 20:17:42 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
   </channel>
 </rss>

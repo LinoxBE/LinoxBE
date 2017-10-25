@@ -2,8 +2,8 @@
 
 # Website settings
 title: "Blockchain.Brussels"
-description: "The local contact in Brussels for Bitcoin and Blockchain"
-keywords: "Brussels, Bitcoin, Blockchain"
+description: "Your contact for Bitcoin, Ethereum, Blockchain and ICO. Based in Belgium."
+keywords: "Bitcoin, Ethereum, Blockchain, ICO, Belgium, Brussels"
 baseurl: "/"
 url: "https://blockchain.brussels"
 # url: "http://127.0.0.1:4000"
@@ -17,7 +17,7 @@ author:
   #facebook_username: 'jiakunnj'
   github_username: 'LinoxBE'
   avatar: 'static/img/landing/FrederikR.jpg'
-  desc: '“I’m Not a Genius, Just a Tremendous Bundle of Experience" (R. Buckminster Fuller)'
+  desc: '“I’m Not a Genius, Just a Tremendous Bundle of Experience" (R. Buckminster Fuller).<br>Bitcoin is my religion.<br>Full stack DevOps manager.'
 
 # comment
 disqus:

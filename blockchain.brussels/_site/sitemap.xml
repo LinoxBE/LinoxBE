@@ -3,27 +3,27 @@
 
 
     <url>
-        <loc>http://localhost:4000/404.html</loc>
+        <loc>https://blockchain.brussels/404.html</loc>
     </url>
 
     <url>
-        <loc>http://localhost:4000/search/cb-search.json</loc>
+        <loc>https://blockchain.brussels/search/cb-search.json</loc>
     </url>
 
     <url>
-        <loc>http://localhost:4000/feed.xml</loc>
+        <loc>https://blockchain.brussels/feed.xml</loc>
     </url>
 
     <url>
-        <loc>http://localhost:4000/</loc>
+        <loc>https://blockchain.brussels/</loc>
     </url>
 
     <url>
-        <loc>http://localhost:4000/robots.txt</loc>
+        <loc>https://blockchain.brussels/robots.txt</loc>
     </url>
 
     <url>
-        <loc>http://localhost:4000/sitemap.xml</loc>
+        <loc>https://blockchain.brussels/sitemap.xml</loc>
     </url>
 
 </urlset>
