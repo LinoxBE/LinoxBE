@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Software Raid On Mac Mini</title>
+	<meta name="description" content="I have an older Mac Mini, with a PowerPC (PPC) CPU. On that Mac Mini I installed Debian PPC. Not difficult. But because I think the internal disk is dying, a...">
+	
+	<link rel="canonical" href="/2016/12/02/software-raid-on-mac-mini/">
+	<link rel="alternate" type="application/rss+xml" title="Linox.BE" href="/feed.xml" />
+	
+	<!-- <link rel="stylesheet" href="/css/main.css"> -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/monokai_sublime.min.css">
+	<script type="text/javascript" src="/static/js/highlight.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+    -->
+    
+	<script type="text/javascript" src="/static/js/index.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Linox.BE</a>
+      <p class="navbar-text"></p>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        
+          <li>
+        
+        <a href="/">Home</a></li>
+
+        
+          
+            
+              <li>
+            
+            <a href="/about/"><span class="glyphicon "></span> About</a></li>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
+
+    <div id="main" class="container main">
+      <div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <header>
+        <h1>Software Raid On Mac Mini</h1>
+        <p>Dec 2, 2016</p>
+      </header>
+      <hr>
+      <article>
+        <p>I have an older Mac Mini, with a PowerPC (PPC) CPU. On that Mac Mini I installed Debian PPC. Not difficult. But because I think the internal disk is dying, and because I have an older spare USB disk, I want to combine both to something more reliable for my data. Using software raid, buitl in into the Linux kernel.</p>
+
+<p>Here is my command history.</p>
+
+<p>Check what’s on the internal disk and create the partition we will use for the software raid:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">mini:~# </span>fdisk /dev/hda
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: p
+/dev/hda
+        <span class="c">#                    type name                  length   base      ( size )  system</span>
+/dev/hda1     Apple_partition_map Apple                     63 @ 1         <span class="o">(</span> 31.5k<span class="o">)</span>  Partition map
+/dev/hda2         Apple_Bootstrap untitled                3907 @ 64        <span class="o">(</span>  1.9M<span class="o">)</span>  NewWorld bootblock
+/dev/hda3         Apple_UNIX_SVR2 untitled            58593751 @ 3971      <span class="o">(</span> 27.9G<span class="o">)</span>  Linux native
+/dev/hda4              Apple_Free Extra               97703766 @ 58597722  <span class="o">(</span> 46.6G<span class="o">)</span>  Free space
+
+Block <span class="nv">size</span><span class="o">=</span>512, Number of <span class="nv">Blocks</span><span class="o">=</span>156301488
+<span class="nv">DeviceType</span><span class="o">=</span>0x0, <span class="nv">DeviceId</span><span class="o">=</span>0x0
+
+
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: c
+First block: 58597722
+Length <span class="o">(</span><span class="k">in </span>blocks, kB <span class="o">(</span>k<span class="o">)</span>, MB <span class="o">(</span>M<span class="o">)</span> or GB <span class="o">(</span>G<span class="o">))</span>: 97703766
+Name of partition: raid
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: p
+/dev/hda
+        <span class="c">#                    type name                  length   base      ( size )  system</span>
+/dev/hda1     Apple_partition_map Apple                     63 @ 1         <span class="o">(</span> 31.5k<span class="o">)</span>  Partition map
+/dev/hda2         Apple_Bootstrap untitled                3907 @ 64        <span class="o">(</span>  1.9M<span class="o">)</span>  NewWorld bootblock
+/dev/hda3         Apple_UNIX_SVR2 untitled            58593751 @ 3971      <span class="o">(</span> 27.9G<span class="o">)</span>  Linux native
+/dev/hda4         Apple_UNIX_SVR2 raid                97703766 @ 58597722  <span class="o">(</span> 46.
+
+Block <span class="nv">size</span><span class="o">=</span>512, Number of <span class="nv">Blocks</span><span class="o">=</span>156301488
+<span class="nv">DeviceType</span><span class="o">=</span>0x0, <span class="nv">DeviceId</span><span class="o">=</span>0x0
+
+
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: w
+IMPORTANT: You are about to write a changed partition map to disk.
+For any partition you changed the start or size of, writing out
+the map causes all data on that partition to be LOST FOREVER.
+Make sure you have a backup of any data on such partitions you
+want to keep before answering <span class="s1">'yes'</span> to the question below!
+
+Write partition map? <span class="o">[</span>n/y]: y
+The partition map has been saved successfully!
+
+Syncing disks.
+
+Partition map written to disk. If any partitions on this disk
+were still <span class="k">in </span>use by the system <span class="o">(</span>see messages above<span class="o">)</span>, you will need
+to reboot <span class="k">in </span>order to utilize the new partition map.
+
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: q
+Load the software raid modules into the kernel
+<span class="gp">mini:~# </span>modprobe md
+<span class="gp">mini:~# </span>modprobe raid1
+<span class="gp">mini:~# </span>ll /dev/md<span class="k">*</span>
+total 0
+Create the partition <span class="k">for </span>raid on the external USB disk:
+<span class="gp">mini:~# </span>fdisk /dev/sda
+/dev/sda
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: p
+No partition map exists
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: ?
+Notes:
+  Base and length fields are blocks, which are 512 bytes long.
+  The name of a partition is descriptive text.
+
+Commands are:
+  h    <span class="nb">help
+  </span>p    print the partition table
+  P    <span class="o">(</span>print ordered by base address<span class="o">)</span>
+  i    initialize partition map
+  s    change size of partition map
+  b    create new 800K bootstrap partition
+  c    create new Linux partition
+  C    <span class="o">(</span>create with <span class="nb">type </span>also specified<span class="o">)</span>
+  d    delete a partition
+  r    reorder partition entry <span class="k">in </span>map
+  w    write the partition table
+  q    quit editing <span class="o">(</span>don<span class="s1">'t save changes)
+Command (? for help): i
+size of '</span>device<span class="s1">' is 320173056 blocks:
+new size of '</span>device<span class="s1">' is 320173056 blocks
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2              Apple_Free Extra              320172992 @ 64        (152.7G)  Free space
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): c
+First block: 64
+Length (in blocks, kB (k), MB (M) or GB (G)): 97703766
+Name of partition: raid
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        ( 46.6G)  Linux native
+/dev/sda3              Apple_Free Extra              222469226 @ 97703830  (106.1G)  Free space
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): c
+First block: 97703830
+Length (in blocks, kB (k), MB (M) or GB (G)): 222469226
+Name of partition: p
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        ( 46.6G)  Linux native
+/dev/sda3         Apple_UNIX_SVR2 p                  222469226 @ 97703830  (106.1G)  Linux native
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): p
+/dev/sda
+        #                    type name                  length   base      ( size )  system
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         ( 31.5k)  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        ( 46.6G)  Linux native
+/dev/sda3         Apple_UNIX_SVR2 p                  222469226 @ 97703830  (106.1G)  Linux native
+
+Block size=512, Number of Blocks=320173056
+DeviceType=0x0, DeviceId=0x0
+
+Command (? for help): ?
+Notes:
+  Base and length fields are blocks, which are 512 bytes long.
+  The name of a partition is descriptive text.
+
+Commands are:
+  h    help
+  p    print the partition table
+  P    (print ordered by base address)
+  i    initialize partition map
+  s    change size of partition map
+  b    create new 800K bootstrap partition
+  c    create new Linux partition
+  C    (create with type also specified)
+  d    delete a partition
+  r    reorder partition entry in map
+  w    write the partition table
+  q    quit editing (don'</span>t save changes<span class="o">)</span>
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: w
+IMPORTANT: You are about to write a changed partition map to disk.
+For any partition you changed the start or size of, writing out
+the map causes all data on that partition to be LOST FOREVER.
+Make sure you have a backup of any data on such partitions you
+want to keep before answering <span class="s1">'yes'</span> to the question below!
+
+Write partition map? <span class="o">[</span>n/y]: y
+The partition map has been saved successfully!
+
+Syncing disks.
+
+Partition map written to disk. If any partitions on this disk
+were still <span class="k">in </span>use by the system <span class="o">(</span>see messages above<span class="o">)</span>, you will need
+to reboot <span class="k">in </span>order to utilize the new partition map.
+
+Command <span class="o">(</span>? <span class="k">for </span><span class="nb">help</span><span class="o">)</span>: q
+Check the partitions on the disks and create the software raid device:
+<span class="gp">mini:~# </span>fdisk -l /dev/sda
+/dev/sda
+        <span class="c">#                    type name                  length   base      ( size )  system</span>
+/dev/sda1     Apple_partition_map Apple                     63 @ 1         <span class="o">(</span> 31.5k<span class="o">)</span>  Partition map
+/dev/sda2         Apple_UNIX_SVR2 raid                97703766 @ 64        <span class="o">(</span> 46.6G<span class="o">)</span>  Linux native
+/dev/sda3         Apple_UNIX_SVR2 p                  222469226 @ 97703830  <span class="o">(</span>106.1G<span class="o">)</span>  Linux native
+
+Block <span class="nv">size</span><span class="o">=</span>512, Number of <span class="nv">Blocks</span><span class="o">=</span>320173056
+<span class="nv">DeviceType</span><span class="o">=</span>0x0, <span class="nv">DeviceId</span><span class="o">=</span>0x0
+
+<span class="gp">mini:~# </span>fdisk -l /dev/hda
+/dev/hda
+        <span class="c">#                    type name                  length   base      ( size )  system</span>
+/dev/hda1     Apple_partition_map Apple                     63 @ 1         <span class="o">(</span> 31.5k<span class="o">)</span>  Partition map
+/dev/hda2         Apple_Bootstrap untitled                3907 @ 64        <span class="o">(</span>  1.9M<span class="o">)</span>  NewWorld bootblock
+/dev/hda3         Apple_UNIX_SVR2 untitled            58593751 @ 3971      <span class="o">(</span> 27.9G<span class="o">)</span>  Linux native
+/dev/hda4         Apple_UNIX_SVR2 raid                97703766 @ 58597722  <span class="o">(</span> 46.6G<span class="o">)</span>  Linux native
+
+Block <span class="nv">size</span><span class="o">=</span>512, Number of <span class="nv">Blocks</span><span class="o">=</span>156301488
+<span class="nv">DeviceType</span><span class="o">=</span>0x0, <span class="nv">DeviceId</span><span class="o">=</span>0x0
+
+<span class="gp">mini:~#  </span>mdadm --create /dev/md0 -l1 -n2 /dev/hda4 /dev/sda2
+mdadm: array /dev/md0 started.
+<span class="gp">mini:~# </span>ll /dev/md<span class="k">*</span>
+brw-rw---- 1 root disk 9, 0 2010-02-19 21:16 /dev/md0
+
+/dev/md:
+total 0
+
+<span class="gp">mini:~# </span>dmesg |tail -30
+<span class="o">[</span>   19.432691] eth0: Link is up at 100 Mbps, full-duplex.
+<span class="o">[</span>   19.438743] eth0: Pause is disabled
+<span class="o">[</span>   22.311163] NET: Registered protocol family 10
+<span class="o">[</span>   22.312745] lo: Disabled Privacy Extensions
+<span class="o">[</span>   22.844675] RPC: Registered udp transport module.
+<span class="o">[</span>   22.845625] RPC: Registered tcp transport module.
+<span class="o">[</span>   22.922990] Installing knfsd <span class="o">(</span>copyright <span class="o">(</span>C<span class="o">)</span> 1996 okir@monad.swb.de<span class="o">)</span>.
+<span class="o">[</span>   23.023021] NFSD: Using /var/lib/nfs/v4recovery as the NFSv4 state recovery directory
+<span class="o">[</span>   23.037864] NFSD: starting 90-second grace period
+<span class="o">[</span>   27.476122] NET: Registered protocol family 5
+<span class="o">[</span>   33.160475] eth0: no IPv6 routers present
+<span class="o">[</span>90914.899398] md: raid1 personality registered <span class="k">for </span>level 1
+<span class="o">[</span>91322.284112] sd 1:0:0:0: <span class="o">[</span>sda] 320173056 512-byte hardware sectors <span class="o">(</span>163929 MB<span class="o">)</span>
+<span class="o">[</span>91322.285965] sd 1:0:0:0: <span class="o">[</span>sda] Write Protect is off
+<span class="o">[</span>91322.286829] sd 1:0:0:0: <span class="o">[</span>sda] Mode Sense: 27 00 00 00
+<span class="o">[</span>91322.286833] sd 1:0:0:0: <span class="o">[</span>sda] Assuming drive cache: write through
+<span class="o">[</span>91322.287719]  sda: <span class="o">[</span>mac] sda1 sda2 sda3
+<span class="o">[</span>91324.309578] sd 1:0:0:0: <span class="o">[</span>sda] 320173056 512-byte hardware sectors <span class="o">(</span>163929 MB<span class="o">)</span>
+<span class="o">[</span>91324.311429] sd 1:0:0:0: <span class="o">[</span>sda] Write Protect is off
+<span class="o">[</span>91324.312287] sd 1:0:0:0: <span class="o">[</span>sda] Mode Sense: 27 00 00 00
+<span class="o">[</span>91324.312292] sd 1:0:0:0: <span class="o">[</span>sda] Assuming drive cache: write through
+<span class="o">[</span>91324.313155]  sda: <span class="o">[</span>mac] sda1 sda2 sda3
+<span class="o">[</span>91430.835341] md: <span class="nb">bind</span>&lt;hda4&gt;
+<span class="o">[</span>91430.852070] md: <span class="nb">bind</span>&lt;sda2&gt;
+<span class="o">[</span>91430.852910] md: md0: raid array is not clean -- starting background reconstruction
+<span class="o">[</span>91431.010544] raid1: raid <span class="nb">set </span>md0 active with 2 out of 2 mirrors
+<span class="o">[</span>91431.033542] md: resync of RAID array md0
+<span class="o">[</span>91431.034418] md: minimum _guaranteed_  speed: 1000 KB/sec/disk.
+<span class="o">[</span>91431.035331] md: using maximum available idle IO bandwidth <span class="o">(</span>but not more than 200000 KB/sec<span class="o">)</span> <span class="k">for </span>resync.
+<span class="o">[</span>91431.036353] md: using 128k window, over a total of 48851776 blocks.
+See here the creation of your partition:
+<span class="gp">mini:~# </span>cat /proc/mdstat
+Personalities : <span class="o">[</span>raid1]
+md0 : active raid1 sda2[1] hda4[0]
+      48851776 blocks <span class="o">[</span>2/2] <span class="o">[</span>UU]
+      <span class="o">[</span>&gt;....................]  resync <span class="o">=</span>  2.2% <span class="o">(</span>1112640/48851776<span class="o">)</span> <span class="nv">finish</span><span class="o">=</span>38.3min <span class="nv">speed</span><span class="o">=</span>20727K/sec
+
+unused devices: &lt;none&gt;
+<span class="gp">mini:~# </span>cat /proc/mdstat
+Personalities : <span class="o">[</span>raid1]
+md0 : active raid1 sda2[1] hda4[0]
+      48851776 blocks <span class="o">[</span>2/2] <span class="o">[</span>UU]
+      <span class="o">[===</span>&gt;.................]  resync <span class="o">=</span> 15.8% <span class="o">(</span>7722368/48851776<span class="o">)</span> <span class="nv">finish</span><span class="o">=</span>33.1min <span class="nv">speed</span><span class="o">=</span>20682K/sec
+
+unused devices: &lt;none&gt;
+Create a filesystem <span class="o">(</span>ext3<span class="o">)</span> on your software raid partition and mount it:
+<span class="gp">mini:~#  </span>mkfs.ext3 /dev/md0
+mke2fs 1.41.3 <span class="o">(</span>12-Oct-2008<span class="o">)</span>
+Filesystem <span class="nv">label</span><span class="o">=</span>
+OS <span class="nb">type</span>: Linux
+Block <span class="nv">size</span><span class="o">=</span>4096 <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
+Fragment <span class="nv">size</span><span class="o">=</span>4096 <span class="o">(</span><span class="nv">log</span><span class="o">=</span>2<span class="o">)</span>
+3055616 inodes, 12212944 blocks
+610647 blocks <span class="o">(</span>5.00%<span class="o">)</span> reserved <span class="k">for </span>the super user
+First data <span class="nv">block</span><span class="o">=</span>0
+Maximum filesystem <span class="nv">blocks</span><span class="o">=</span>0
+373 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424
+
+Writing inode tables: <span class="k">done
+</span>Creating journal <span class="o">(</span>32768 blocks<span class="o">)</span>: <span class="k">done
+</span>Writing superblocks and filesystem accounting information: <span class="k">done
+
+</span>This filesystem will be automatically checked every 26 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+<span class="gp">mini:~# </span>mkdir /data
+<span class="gp">mini:~# </span>mount /dev/md0 /data/
+<span class="gp">mini:~# </span>vi /etc/fstab
+
+<span class="gp">mini:~# </span>cat /proc/mdstat
+Personalities : <span class="o">[</span>raid1]
+md0 : active raid1 sda2[1] hda4[0]
+      48851776 blocks <span class="o">[</span>2/2] <span class="o">[</span>UU]
+      <span class="o">[=====</span>&gt;...............]  resync <span class="o">=</span> 26.9% <span class="o">(</span>13163840/48851776<span class="o">)</span> <span class="nv">finish</span><span class="o">=</span>31.7min <span class="nv">speed</span><span class="o">=</span>18709K/sec
+
+unused devices: &lt;none&gt;</code></pre></figure>
+
+
+      </article>
+      <hr>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    </div>
+	
+    <!-- duoshuo.com javascript include code. -->    
+    
+    <!-- disqus.com javascript include code. -->
+	
+    <div class="post-area post comment">
+        <div id="disqus_thread"></div>
+    </div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://linoxbe.disqus.com/2016/12/02/software-raid-on-mac-mini/"; 
+			this.page.identifier = "/2016/12/02/software-raid-on-mac-mini"; 
+		};
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//linoxbe.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	
+    
+  </div>
+  
+  <div id="content" class="col-sm-3">
+    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header">
+        Content
+      </div>
+      <div class="content-text"></div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    
+    <div id="top" data-toggle="tooltip" data-placement="left" title="back to top">
+      <a href="javascript:;">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+      </a>
+    </div>
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="mailto:fred@linox.be"><span class="glyphicon glyphicon-envelope"></span> fred@linox.be</a>
+        <span class="point"> · </span>
+        
+          <a href="https://github.com/LinoxBE">
+            <span class="icon">
+              <svg viewBox="0 0 16 16">
+                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            Github
+            <!-- <span>LinoxBE</span> -->
+          </a>
+          
+          <span class="point"> · </span>
+          <span><a href="https://github.com/LiXizhi/LiXizhi.github.io/blob/master/_posts/2016-12-02-software-raid-on-mac-mini.markdown">View source</a></span>
+          <span class="point"> · </span>
+          <span><a class="newpost" href="javascript:;">New post</a></span>
+		  <span class="point"> · </span>
+          <span><a href="/feed.xml">RSS</a></span>
+          <span class="point"> · </span>
+          <span>&copy; 2015 LiXizhi</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script type="text/javascript">
+    function OnClickNewPost()
+    {
+        var title = prompt("Please enter title of your post");
+        if (title!=null){
+            title = title.replace(" ", "-");
+            var currentdate = new Date();
+            var urlNewPage = "https://github.com/LiXizhi/LiXizhi.github.io/new/master?filename=_posts/" 
+                + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + "-" + title + ".md";
+                
+            var defaultText =  [
+                '---',
+                'layout: post',
+                'comments: true',
+                'categories: diary',
+                '---',
+                '## Title',
+                'text'
+                ].join('\n');
+            urlNewPage += "&value=" + encodeURIComponent(defaultText);
+            window.open(urlNewPage);
+        }
+    }
+    
+    $(function() {
+      // CreateNewPostLinks
+      $('.newpost').each(function(){
+          $(this).click(OnClickNewPost);
+      });
+    });
+</script>
+  
+  </body>
+</html>
